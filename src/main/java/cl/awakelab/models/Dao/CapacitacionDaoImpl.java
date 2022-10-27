@@ -1,4 +1,4 @@
-package cl.awakelab.Models.Dao;
+package cl.awakelab.models.Dao;
 
 import Models.Capacitacion;
 import Models.Conection;

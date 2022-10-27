@@ -1,4 +1,4 @@
-package cl.awakelab.Models;
+package cl.awakelab.models;
 
 import java.time.LocalDate;
 import java.time.Period;
