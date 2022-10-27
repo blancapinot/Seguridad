@@ -1,4 +1,4 @@
-package cl.awakelab.Models;
+package cl.awakelab.models;
 
 
 
