@@ -20,13 +20,13 @@
         <property name="dataSource" ref="ds"></property>
     </bean>
 
-    <bean id="usuarioDAOImpl" class="org.example.models.DAO.UsuarioDAOImpl">
+    <bean id="usuarioDAOImpl" class="cl.awakelab.Models.Dao.UsuarioDaoImpl">
         <property name="template" ref="jt"></property>
     </bean>
 
-    <bean id="capacitacionDAOImpl" class="org.example.models.DAO.CapacitacionDAOImpl">
+    <bean id="capacitacionDAOImpl" class="cl.awakelab.Models.Dao.CapacitacionDaoImpl">
         <property name="template" ref="jt"></property>
     </bean>
 
-    <context:component-scan base-package="org.example.models"></context:component-scan>
+    <context:component-scan base-package="cl.awakelab.Models"></context:component-scan>
 </beans>
