@@ -1,4 +1,6 @@
-package cl.awakelab.models;
+package cl.awakelab.models.entities;
+
+import cl.awakelab.models.Asesoria;
 
 import java.time.LocalDate;
 import java.time.Period;

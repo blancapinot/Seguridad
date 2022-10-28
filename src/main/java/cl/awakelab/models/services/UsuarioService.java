@@ -1,7 +1,7 @@
-package cl.awakelab.models.service;
+package cl.awakelab.models.services;
 
 import cl.awakelab.models.DAO.UsuarioDaoImpl;
-import cl.awakelab.models.Usuario;
+import cl.awakelab.models.entities.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,7 @@
 package cl.awakelab.models;
 
 
+import cl.awakelab.models.entities.Usuario;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

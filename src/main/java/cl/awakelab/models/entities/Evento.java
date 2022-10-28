@@ -1,4 +1,4 @@
-package cl.awakelab.models;
+package cl.awakelab.models.entities;
 
 import java.util.Scanner;
 

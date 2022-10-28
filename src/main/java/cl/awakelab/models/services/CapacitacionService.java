@@ -1,4 +1,4 @@
-package cl.awakelab.models.service;
+package cl.awakelab.models.services;
 
 import cl.awakelab.models.entities.Capacitacion;
 import cl.awakelab.models.DAO.CapacitacionDaoImpl;
@@ -13,7 +13,7 @@ public class CapacitacionService {
 
     @Autowired
     private CapacitacionDaoImpl cDao;
-    
+
     public CapacitacionService(CapacitacionDaoImpl cDao) {
         this.cDao = cDao;
     }
