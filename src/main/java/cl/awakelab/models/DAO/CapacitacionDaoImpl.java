@@ -1,6 +1,7 @@
-package cl.awakelab.models.Dao;
+package cl.awakelab.models.DAO;
 
 import cl.awakelab.models.Capacitacion;
+import cl.awakelab.models.CapacitacionRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -16,14 +17,16 @@ public class CapacitacionDaoImpl implements ICapacitacionDao {
 
 
     @Override
-    public boolean create(Capacitacion capacitacion) {
-        String sql = "insert capacitaciones (rut-cliente, dia, hora, lugar, duracion)"
-        return false;
+    public void create(Capacitacion capacitacion) {
+        String sql = "insert into capacitaciones (rut_cliente, dia, hora, lugar, duracion, cantidad_asistentes) values (?, ?, ?, ?, ?, ?)";
+        template.update(sql,new Object[] {capacitacion.getRutCliente(), capacitacion.getDia(), capacitacion.getHora(),
+                capacitacion.getLugar(), capacitacion.getDuracion(), capacitacion.getCantidadDeAsistentes()});
     }
 
     @Override
     public List<Capacitacion> obtener() {
-        return null;
+        String slq = "select id_capacitacion, rut_cliente, dia. hora. lugar, duracion, cantidad_asistentes";
+        return template.query(slq,new CapacitacionRowMapper());
     }
 
     @Override
