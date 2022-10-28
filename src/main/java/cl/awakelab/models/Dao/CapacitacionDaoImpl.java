@@ -14,6 +14,7 @@ public class CapacitacionDaoImpl implements ICapacitacionDao {
         this.template = template;
     }
 
+
     @Override
     public boolean create(Capacitacion capacitacion) {
         return false;
@@ -25,13 +26,18 @@ public class CapacitacionDaoImpl implements ICapacitacionDao {
     }
 
     @Override
-    public boolean actualizar(Capacitacion capacitacion) {
-        return false;
+    public Capacitacion readOne(Integer id) {
+        return null;
     }
 
     @Override
-    public boolean eliminar(int id) {
-        return false;
+    public void actualizar(Capacitacion capacitacion) {
+
+    }
+
+    @Override
+    public void eliminar(int id) {
+
     }
 }
 
