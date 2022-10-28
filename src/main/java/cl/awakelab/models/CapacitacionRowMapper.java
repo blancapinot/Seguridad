@@ -1,5 +1,6 @@
 package cl.awakelab.models;
 
+import cl.awakelab.models.entities.Capacitacion;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

@@ -1,6 +1,6 @@
 package cl.awakelab.models.service;
 
-import cl.awakelab.models.Capacitacion;
+import cl.awakelab.models.entities.Capacitacion;
 import cl.awakelab.models.DAO.CapacitacionDaoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
