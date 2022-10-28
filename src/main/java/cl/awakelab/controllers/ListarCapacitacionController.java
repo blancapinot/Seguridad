@@ -14,7 +14,7 @@ import java.util.List;
 public class ListarCapacitacionController {
     @Autowired
     private CapacitacionService pc;
-    @RequestMapping(value = "/listarCapacitacion",method = RequestMethod.GET)
+    @RequestMapping(value = "/listarCapacitaciones",method = RequestMethod.GET)
     public ModelAndView listarCapacitacion(){
         List<Capacitacion> listarCapacitacion = pc.getAll();
         return new ModelAndView("listarCapacitacion","listarCapacitacion",listarCapacitacion);
