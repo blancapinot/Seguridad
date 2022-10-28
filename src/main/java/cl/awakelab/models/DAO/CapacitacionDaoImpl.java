@@ -25,7 +25,7 @@ public class CapacitacionDaoImpl implements ICapacitacionDao {
 
     @Override
     public List<Capacitacion> obtener() {
-        String slq = "select id_capacitacion, rut_cliente, dia. hora. lugar, duracion, cantidad_asistentes";
+        String slq = "select id_capacitacion, rut_cliente, dia, hora, lugar, duracion, cantidad_asistentes from capacitaciones";
         return template.query(slq,new CapacitacionRowMapper());
     }
 

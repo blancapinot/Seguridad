@@ -15,9 +15,9 @@ public class ListarCapacitacionController {
     @Autowired
     private CapacitacionService pc;
     @RequestMapping(value = "/listarCapacitaciones",method = RequestMethod.GET)
-    public ModelAndView listarCapacitacion(){
+    public ModelAndView listarCapacitaciones(){
         List<Capacitacion> listarCapacitacion = pc.getAll();
-        return new ModelAndView("listarCapacitacion","listarCapacitacion",listarCapacitacion);
+        return new ModelAndView("listarCapacitaciones","capacitaciones",listarCapacitacion);
     }
 
 }

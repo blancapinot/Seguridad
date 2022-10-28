@@ -3,6 +3,7 @@
   <component name="WebContextManager">
     <option name="state">
       <map>
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/recursos/views/listarCapacitaciones.jsp" value="file://$PROJECT_DIR$/src/main/webapp/recursos/views" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/recursos/views/menu.jsp" value="file://$PROJECT_DIR$/src/main/webapp/recursos/views" />
       </map>
     </option>
