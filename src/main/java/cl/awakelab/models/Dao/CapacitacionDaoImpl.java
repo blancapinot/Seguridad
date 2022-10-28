@@ -17,6 +17,7 @@ public class CapacitacionDaoImpl implements ICapacitacionDao {
 
     @Override
     public boolean create(Capacitacion capacitacion) {
+        String sql = "insert capacitaciones (rut-cliente, dia, hora, lugar, duracion)"
         return false;
     }
 
