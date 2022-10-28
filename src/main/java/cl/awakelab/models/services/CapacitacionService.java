@@ -1,6 +1,6 @@
-package cl.awakelab.models.service;
+package cl.awakelab.models.services;
 
-import cl.awakelab.models.Capacitacion;
+import cl.awakelab.models.entities.Capacitacion;
 import cl.awakelab.models.DAO.CapacitacionDaoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ public class CapacitacionService {
 
     @Autowired
     private CapacitacionDaoImpl cDao;
-    
+
     public CapacitacionService(CapacitacionDaoImpl cDao) {
         this.cDao = cDao;
     }

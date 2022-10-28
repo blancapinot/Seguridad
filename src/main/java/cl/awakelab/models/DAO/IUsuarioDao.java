@@ -1,6 +1,6 @@
 package cl.awakelab.models.DAO;
 
-import cl.awakelab.models.Usuario;
+import cl.awakelab.models.entities.Usuario;
 
 import java.util.List;
 

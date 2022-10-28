@@ -1,6 +1,6 @@
 package cl.awakelab.models.DAO;
 
-import cl.awakelab.models.Capacitacion;
+import cl.awakelab.models.entities.Capacitacion;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package cl.awakelab.models;
+package cl.awakelab.models.entities;
 
 public class Capacitacion extends Evento {
     int id;

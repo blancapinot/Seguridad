@@ -1,6 +1,6 @@
 package cl.awakelab.models.DAO;
 
-import cl.awakelab.models.Capacitacion;
+import cl.awakelab.models.entities.Capacitacion;
 import cl.awakelab.models.CapacitacionRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
