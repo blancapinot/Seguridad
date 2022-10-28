@@ -41,7 +41,8 @@ public class CapacitacionDaoImpl implements ICapacitacionDao {
 
     @Override
     public void eliminar(int id) {
-
+    String sql = "delete capacitaciones where id_capacitacion = ?";
+    template.update (sql, id);
     }
 }
 
