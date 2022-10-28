@@ -5,7 +5,7 @@ import cl.awakelab.models.Capacitacion;
 import java.util.List;
 
 public interface ICapacitacionDao {
-    public boolean create (Capacitacion capacitacion);
+    public void create (Capacitacion capacitacion);
     public List<Capacitacion> obtener();
 public Capacitacion readOne (Integer id);
     public void actualizar(Capacitacion capacitacion);
