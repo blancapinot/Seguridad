@@ -28,6 +28,7 @@
         <beans:property name="suffix" value=".jsp" />
     </beans:bean>
 
+
     <!--
         Escanéa el Classpath en búsqueda de anotaciones como @Component, @Repository, @Service,
         @Controller, etc.

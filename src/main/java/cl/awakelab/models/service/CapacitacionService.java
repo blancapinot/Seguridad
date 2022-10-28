@@ -9,11 +9,11 @@ import java.util.List;
 
 @Service
 public class CapacitacionService {
+
+
     @Autowired
-    CapacitacionDaoImpl cDao;
-    public CapacitacionService() {
-        super();
-    }
+    private CapacitacionDaoImpl cDao;
+
     public List<Capacitacion> getAll(){
         return cDao.obtener();
     }

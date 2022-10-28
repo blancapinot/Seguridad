@@ -17,7 +17,7 @@
 
     <%@include file="menu.jsp" %>
 
-    <form method="post" action="crear-capacitacion">
+    <form method="post" action="crear-capacitacion" modelAttribute="capacitacion">
         <div class="form-group">
             <label for="formGroupExampleInput">Ingrese duración de la Capacitación</label>
             <input type="text" class="form-control" id="formGroupExampleInput" name="duracion" placeholder="horas pedagógicas y prácticas">

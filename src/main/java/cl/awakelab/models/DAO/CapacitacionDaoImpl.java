@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;
 
+
 public class CapacitacionDaoImpl implements ICapacitacionDao {
     @Autowired
     JdbcTemplate template;
