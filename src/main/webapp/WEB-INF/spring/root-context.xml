@@ -20,11 +20,11 @@
         <property name="dataSource" ref="ds"/>
     </bean>
 
-    <bean id="usuarioDAOImpl" class="cl.awakelab.models.Dao.UsuarioDaoImpl">
+    <bean id="usuarioDAOImpl" class="cl.awakelab.models.DAO.UsuarioDaoImpl">
         <property name="template" ref="jt"></property>
     </bean>
 
-    <bean id="capacitacionDAOImpl" class="cl.awakelab.models.Dao.CapacitacionDaoImpl">
+    <bean id="capacitacionDAOImpl" class="cl.awakelab.models.DAO.CapacitacionDaoImpl">
         <property name="template" ref="jt"></property>
     </bean>
 

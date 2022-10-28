@@ -1,4 +1,4 @@
-package cl.awakelab.models.Dao;
+package cl.awakelab.models.DAO;
 
 import cl.awakelab.models.Capacitacion;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +39,7 @@ public class CapacitacionDaoImpl implements ICapacitacionDao {
     @Override
     public void eliminar(int id) {
     String sql = "delete capacitaciones where id_capacitacion = ?";
-    template.update (sql, new Object() {id};
+    template.update (sql, id);
     }
 }
 
