@@ -31,12 +31,16 @@ public class CapacitacionDaoImpl implements ICapacitacionDao {
 
     @Override
     public Capacitacion readOne(Integer id) {
-        return null;
+        String sql = "select id_capacitacion, rut_cliente, dia, hora, lugar, duracion, cantidad_asistentes " +
+                "where id_capacitacion = ? ";
+        return template.queryForObject(sql, new Object[] {id}, new CapacitacionRowMapper());
     }
 
     @Override
     public void actualizar(Capacitacion capacitacion) {
-
+    String sql = "update capacitaciones set rut_cliente = ?, dia = ?, hora = ?, lugar = ?, duracion = ?, cantidad_asistentes = ?";
+    template.update(sql, new Object[]{capacitacion.getRutCliente(),capacitacion.getDia(), capacitacion.getHora(),capacitacion.getLugar(),
+    capacitacion.getDuracion(),capacitacion.getCantidadDeAsistentes()});
     }
 
     @Override
