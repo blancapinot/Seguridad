@@ -24,7 +24,7 @@
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Ingrese cantidad de Asistentes</label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" name="cantidad_asistentes" placeholder="número de asistentes">
+            <input type="text" class="form-control" id="formGroupExampleInput2" name="cantidadDeAsistentes" placeholder="número de asistentes">
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Ingrese hora de la capacitacion</label>
@@ -40,7 +40,7 @@
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Ingrese rut de cliente</label>
-            <input type="text" class="form-control" id="formGroupExampleInput6" name="rut" placeholder="18842139">
+            <input type="text" class="form-control" id="formGroupExampleInput6" name="rutCliente" placeholder="18842139">
         </div>
         <button type="submit" class="btn btn-primary">Registrar</button>
     </form>

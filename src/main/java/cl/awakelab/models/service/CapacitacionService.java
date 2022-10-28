@@ -13,6 +13,10 @@ public class CapacitacionService {
 
     @Autowired
     private CapacitacionDaoImpl cDao;
+    
+    public CapacitacionService(CapacitacionDaoImpl cDao) {
+        this.cDao = cDao;
+    }
 
     public List<Capacitacion> getAll(){
         return cDao.obtener();

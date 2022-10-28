@@ -48,7 +48,7 @@
                     <c:out value="${capacitaciones.getDuracion()}"/>
                 </td>
                 <td>
-                   <form action="EliminarCapacitacion" method="post">
+                   <form action="EliminarCapacitacion" method="post" modelAttribute="capacitacion">
                       <button title="Eliminar" type="submit" name="id" class="btn btn-primary" value="${capacitaciones.getId()}">Eliminar</button>
                    </form>
                 </td>

@@ -20,8 +20,8 @@ public class CapacitacionDaoImpl implements ICapacitacionDao {
     @Override
     public void create(Capacitacion capacitacion) {
         String sql = "insert into capacitaciones (rut_cliente, dia, hora, lugar, duracion, cantidad_asistentes) values (?, ?, ?, ?, ?, ?)";
-        template.update(sql,new Object[] {capacitacion.getRutCliente(), capacitacion.getDia(), capacitacion.getHora(),
-                capacitacion.getLugar(), capacitacion.getDuracion(), capacitacion.getCantidadDeAsistentes()});
+        template.update(sql, capacitacion.getRutCliente(), capacitacion.getDia(), capacitacion.getHora(),
+                capacitacion.getLugar(), capacitacion.getDuracion(), capacitacion.getCantidadDeAsistentes());
     }
 
     @Override
@@ -46,7 +46,7 @@ public class CapacitacionDaoImpl implements ICapacitacionDao {
 
     @Override
     public void eliminar(int id) {
-    String sql = "delete capacitaciones where id_capacitacion = ?";
+    String sql = "delete from capacitaciones where id_capacitacion = ?";
     template.update (sql, id);
     }
 }

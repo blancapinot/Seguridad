@@ -20,4 +20,5 @@ public class ListarCapacitacionController {
         return new ModelAndView("listarCapacitaciones","capacitaciones",listarCapacitacion);
     }
 
+
 }

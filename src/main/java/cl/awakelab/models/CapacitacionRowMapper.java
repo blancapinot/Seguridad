@@ -2,7 +2,6 @@ package cl.awakelab.models;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import javax.swing.tree.TreePath;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -11,12 +10,6 @@ public class CapacitacionRowMapper implements RowMapper <Capacitacion> {
     @Override
     public Capacitacion mapRow(ResultSet rs, int rowNum) throws SQLException {
 
-        return new Capacitacion(rs.getInt("rut_cliente"),
-                rs.getString("dia"),
-                rs.getString("hora"),
-                rs.getString("lugar"),
-                rs.getInt("id_capacitacion"),
-                rs.getString("duracion"),
-                rs.getInt("cantidad_asistentes"));
+        return new Capacitacion(rs.getInt("rut_cliente"), rs.getString("dia"), rs.getString("hora"), rs.getString("lugar"), rs.getInt("id_capacitacion"), rs.getString("duracion"), rs.getInt("cantidad_asistentes"));
     }
 }
