@@ -1,18 +1,42 @@
 package cl.awakelab.models.Dao;
 
-import Models.Capacitacion;
-import Models.Conection;
+import cl.awakelab.models.Capacitacion;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CapacitacionDaoImpl implements ICapacitacionDao {
+    @Autowired
+    JdbcTemplate template;
 
-    private Connection conn = null;
+    public void setTemplate(JdbcTemplate template) {
+        this.template = template;
+    }
+
+    @Override
+    public boolean create(Capacitacion capacitacion) {
+        return false;
+    }
+
+    @Override
+    public List<Capacitacion> obtener() {
+        return null;
+    }
+
+    @Override
+    public boolean actualizar(Capacitacion capacitacion) {
+        return false;
+    }
+
+    @Override
+    public boolean eliminar(int id) {
+        return false;
+    }
+}
+
+
+   /* private Connection conn = null;
 
     @Override
     public boolean create(Capacitacion capacitacion) {
@@ -113,9 +137,9 @@ public class CapacitacionDaoImpl implements ICapacitacionDao {
 
         }
         return eliminar;
-    }
+    */
 
 
-}
+
 
 

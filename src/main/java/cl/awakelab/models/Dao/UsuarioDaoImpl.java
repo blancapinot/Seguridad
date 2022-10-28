@@ -1,18 +1,45 @@
 package cl.awakelab.models.Dao;
 
-import Models.Conection;
-import Models.Usuario;
+import cl.awakelab.models.Usuario;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
 
 public class UsuarioDaoImpl implements IUsuarioDao {
+    @Autowired
+    JdbcTemplate template;
 
-    private Connection connection;
+    public void setTemplate(JdbcTemplate template) {
+        this.template = template;
+    }
+
+    @Override
+    public Usuario create(Usuario usuario) {
+        return null;
+    }
+
+    @Override
+    public List<Usuario> readAll() {
+        return null;
+    }
+
+    @Override
+    public void delete(Long idUsuario) {
+
+    }
+
+    @Override
+    public Usuario readOne(Long idUsuario) {
+        return null;
+    }
+
+    @Override
+    public void update(Usuario usuario) {
+
+    }
+
+    /*private Connection connection;
 
     @Override
     public Usuario create(Usuario usuario) {
@@ -103,5 +130,5 @@ public class UsuarioDaoImpl implements IUsuarioDao {
         }catch(SQLException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }
