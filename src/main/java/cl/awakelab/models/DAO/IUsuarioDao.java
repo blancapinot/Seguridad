@@ -6,13 +6,14 @@ import java.util.List;
 
 public interface IUsuarioDao {
 
-    Usuario create(Usuario usuario);
 
-    List<Usuario> readAll();
+    public void create(Usuario usuario);
 
-    void delete(Long idUsuario);
+    public List<Usuario> obtener();
 
-    Usuario readOne(Long idUsuario);
+    public Usuario readOne(Integer id);
 
-    void update(Usuario usuario);
+    public void actualizar(Usuario usuario);
+
+    public void eliminar(int id);
 }

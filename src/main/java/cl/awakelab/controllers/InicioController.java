@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class InicioController {
+public class    InicioController {
 
     /**
      * Maneja las solicitudes que se le hacen a la raíz del sitio

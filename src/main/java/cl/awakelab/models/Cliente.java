@@ -17,8 +17,8 @@ public class Cliente extends Usuario {
     //metodo constructor con parametros
 
 
-    public Cliente(Integer idUser, String nombre, String apellido, Integer rut, String fechaNacimiento, String telefono, String afp, String sistemaDeSalud, String comuna, int edad, String direccion) {
-        super(idUser, nombre, apellido, rut, fechaNacimiento);
+    public Cliente(Integer idUser, String nombre, String apellido, Integer rut, String tipo, String fechaNacimiento, String telefono, String afp, String sistemaDeSalud, String comuna, int edad, String direccion) {
+        super(idUser, nombre, apellido, rut, tipo, fechaNacimiento);
         this.telefono = telefono;
         this.afp = afp;
         this.sistemaDeSalud = sistemaDeSalud;

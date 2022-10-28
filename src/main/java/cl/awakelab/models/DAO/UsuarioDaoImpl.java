@@ -1,6 +1,7 @@
 package cl.awakelab.models.DAO;
 
 import cl.awakelab.models.Usuario;
+import cl.awakelab.models.UsuarioRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -14,29 +15,35 @@ public class UsuarioDaoImpl implements IUsuarioDao {
         this.template = template;
     }
 
-    @Override
-    public Usuario create(Usuario usuario) {
-        return null;
+    public void create(Usuario usuario) {
+        String sql = "insert into usuario (nombre, apellido, rut, tipo, fecha_nacimiento) values (?, ?, ?, ?, ?, ?)";
+        template.update(sql,new Object[] {usuario.getNombre(), usuario.getApellido(), usuario.getRut(),
+                usuario.getTipo(), usuario.getFechaNacimiento()});
     }
 
     @Override
-    public List<Usuario> readAll() {
-        return null;
+    public List<Usuario> obtener() {
+        String sql = "select * from id, nombre, apellido, rut, tipo, fecha_nacimiento";
+        return template.query(sql, new UsuarioRowMapper());
     }
 
     @Override
-    public void delete(Long idUsuario) {
-
+    public void eliminar(int id) {
+        String sql = "delete usuario where id = ?";
+        template.update (sql, id);
     }
 
     @Override
-    public Usuario readOne(Long idUsuario) {
-        return null;
+    public Usuario readOne(Integer id) {
+        String sql = "select id, nombre, apellido, rut, tipo, fecha_nacimiento" +
+                "where id = ? ";
+        return template.queryForObject(sql, new Object[] {id}, new UsuarioRowMapper());
     }
-
     @Override
-    public void update(Usuario usuario) {
-
+    public void actualizar(Usuario usuario) {
+        String sql = "update usuario set nombre = ?, apellido = ?, rut = ?, tipo = ?, fecha_nacimiento = ? ";
+        template.update(sql, new Object[]{usuario.getNombre(),usuario.getApellido(), usuario.getRut(),usuario.getTipo(), usuario.getFechaNacimiento()
+                });
     }
 
     /*private Connection connection;

@@ -19,7 +19,7 @@ public class Usuario implements Asesoria {
     Scanner in = new Scanner(System.in);
 
     //metodo contructor sin parametros
-    public Usuario(int id_usuario, String nombre, String apellido, int rut, String tipo) {
+    public Usuario(String id_usuario, String nombre, int apellido, String rut, String tipo) {
     }
 
     public Usuario(Integer idUser, String nombre, String apellido, Integer rut, String fechaNacimiento, String tipo) {
