@@ -1,36 +1,37 @@
 package cl.awakelab.models.services;
 
 import cl.awakelab.models.entities.Capacitacion;
-import cl.awakelab.models.DAO.CapacitacionDaoImpl;
+import cl.awakelab.models.repositories.ICapacitacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CapacitacionService {
 
 
     @Autowired
-    private CapacitacionDaoImpl cDao;
+    private ICapacitacionRepository capacitacionRepository;
 
-    public CapacitacionService(CapacitacionDaoImpl cDao) {
-        this.cDao = cDao;
+    public CapacitacionService(ICapacitacionRepository capacitacionRepository) {
+        this.capacitacionRepository = capacitacionRepository;
     }
 
     public List<Capacitacion> getAll(){
-        return cDao.obtener();
+        return capacitacionRepository.findAll();
     }
-    public Capacitacion getOne(Integer id){
-        return  cDao.readOne(id);
+    public Optional<Capacitacion> getOne(Integer id){
+        return  capacitacionRepository.findById(id);
     }
     public void create(Capacitacion capacitacion){
-        cDao.create(capacitacion);
+        capacitacionRepository.save(capacitacion);
     }
     public void update(Capacitacion capacitacion){
-        cDao.actualizar(capacitacion);
+        capacitacionRepository.save(capacitacion);
     }
     public void delete(int id){
-        cDao.eliminar(id);
+        capacitacionRepository.deleteById(id);
     }
 }

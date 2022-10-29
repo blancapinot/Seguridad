@@ -1,8 +1,18 @@
 package cl.awakelab.models.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "capacitaciones")
 public class Capacitacion extends Evento {
+    @Id
+    @Column(name = "id_capacitacion")
     int id;
     String duracion;
+    @Column(name = "cantidad_asistentes")
     int cantidadDeAsistentes;
 
     //Se genera constructor sin parametro
