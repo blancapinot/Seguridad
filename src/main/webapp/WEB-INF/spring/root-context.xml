@@ -40,10 +40,9 @@
         </property>
     </bean>
 
-    <bean id="trasactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
-    <bean id="transactionManager"/>
 
 
     <!--<bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">
@@ -57,8 +56,8 @@
         <property name="template" ref="jt"></property>
     </bean>-->
 
-    <context:component-scan base-package="cl.awakelab.models"></context:component-scan>
+    <context:component-scan base-package="cl.awakelab.models"/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
-    <jpa:repositories base-package="cl.awakelab.models.repositories"></jpa:repositories>
+    <jpa:repositories base-package="cl.awakelab.models.repositories"/>
 
 </beans>
