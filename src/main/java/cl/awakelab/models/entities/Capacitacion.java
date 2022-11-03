@@ -1,42 +1,49 @@
 package cl.awakelab.models.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "capacitaciones")
-public class Capacitacion extends Evento {
+public class Capacitacion {
+    @Column(name = "rut_cliente")
+    private int rutCliente;
+    private String dia;
+    private String hora;
+    private String lugar;
     @Id
     @Column(name = "id_capacitacion")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     String duracion;
     @Column(name = "cantidad_asistentes")
     int cantidadDeAsistentes;
 
-    //Se genera constructor sin parametro
     public Capacitacion() {
+
     }
 
+    //Constructor completo
     public Capacitacion(int rutCliente, String dia, String hora, String lugar, int id, String duracion, int cantidadDeAsistentes) {
-        super(rutCliente, dia, hora, lugar);
+        this.rutCliente = rutCliente;
+        this.dia = dia;
+        this.hora = hora;
+        this.lugar = lugar;
         this.id = id;
         this.duracion = duracion;
         this.cantidadDeAsistentes = cantidadDeAsistentes;
     }
 
+    // Constructor sin ID
     public Capacitacion(int rutCliente, String dia, String hora, String lugar, String duracion, int cantidadDeAsistentes) {
-        super(rutCliente, dia, hora, lugar);
+        this.rutCliente = rutCliente;
+        this.dia = dia;
+        this.hora = hora;
+        this.lugar = lugar;
         this.duracion = duracion;
         this.cantidadDeAsistentes = cantidadDeAsistentes;
     }
 
-    public Capacitacion(int id) {
-    }
-
     //Getters and setters
-
 
     public int getId() {
         return id;
@@ -62,14 +69,51 @@ public class Capacitacion extends Evento {
         this.cantidadDeAsistentes = cantidadDeAsistentes;
     }
 
+    public int getRutCliente() {
+        return rutCliente;
+    }
+
+    public void setRutCliente(int rutCliente) {
+        this.rutCliente = rutCliente;
+    }
+
+    public String getDia() {
+        return dia;
+    }
+
+    public void setDia(String dia) {
+        this.dia = dia;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+
+    public String getLugar() {
+        return lugar;
+    }
+
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
+    }
+
     //to Strings
+
     @Override
     public String toString() {
         return "Capacitacion{" +
-                "id=" + id +
+                "rutCliente=" + rutCliente +
+                ", dia='" + dia + '\'' +
+                ", hora='" + hora + '\'' +
+                ", lugar='" + lugar + '\'' +
+                ", id=" + id +
                 ", duracion='" + duracion + '\'' +
                 ", cantidadDeAsistentes=" + cantidadDeAsistentes +
-                "} " + super.toString();
+                '}';
     }
 
     //Creacion de metodo mostrarDetalle()

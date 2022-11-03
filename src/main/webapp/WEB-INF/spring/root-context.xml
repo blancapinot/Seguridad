@@ -56,7 +56,7 @@
         <property name="template" ref="jt"></property>
     </bean>-->
 
-    <context:component-scan base-package="cl.awakelab.models"/>
+    <context:component-scan base-package="cl.awakelab"/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <jpa:repositories base-package="cl.awakelab.models.repositories"/>
 

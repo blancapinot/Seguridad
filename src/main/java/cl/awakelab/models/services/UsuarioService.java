@@ -1,16 +1,13 @@
 package cl.awakelab.models.services;
 
-import cl.awakelab.models.DAO.UsuarioDaoImpl;
-import cl.awakelab.models.entities.Usuario;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UsuarioService<usuario> {
+public class UsuarioService{
 
-    @Autowired
+    /*@Autowired
     UsuarioDaoImpl uDao;
 
     public UsuarioService() {
@@ -29,5 +26,5 @@ public List<Usuario> getAll() {
     }
     public void delete(int id) {
         uDao.eliminar(id);
-    }
+    }*/
 }
