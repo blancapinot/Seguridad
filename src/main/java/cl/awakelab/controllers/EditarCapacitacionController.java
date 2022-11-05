@@ -9,47 +9,43 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
+import java.util.Optional;
+
 @Controller
+@RequestMapping("/capacitacion")
 public class EditarCapacitacionController {
 
     @Autowired
     private CapacitacionService capacitacionService;
 
-    /**
-     * Maneja las solicitudes que se le hacen a la raíz del sitio
-     *
-     * @return un objeto {@link ModelAndView} con la respuesta al cliente
-     */
-   /* @RequestMapping(path = "/editar-capacitacion", method = RequestMethod.GET)
-    public ModelAndView miEditarCapacitacion() {
-        return new ModelAndView("editarCapacitacion");*/
-    }
-/*
-    @RequestMapping(value = "/editar-capacitacion", method = RequestMethod.POST)
-    public ModelAndView editar(@ModelAttribute("capacitacion") Capacitacion capacitacion) {
-        capacitacionService.update(capacitacion);
-
-        return new ModelAndView("listarCapacitacion");
-    }*/
-
-
-    @RequestMapping(value = "/editar-capacitacion/{id}", method = RequestMethod.GET)
-    public ModelAndView actualizarCapacitacion(@PathVariable Integer id){
+    @RequestMapping(value = ("/crear"), method = RequestMethod.GET)
+    public ModelAndView crearCapacitacion() {
         ModelAndView model = new ModelAndView();
-        Capacitacion capacitacion = capacitacionService.getOne(id);
-        model.addObject("capacitacion", capacitacion);
-        model.setViewName("crearUsuario");
+        Capacitacion capacitacion = new Capacitacion();
+        model.addObject("capacitacionForm", capacitacion);
+        model.setViewName("crearCapacitacion");
+        return model;
+    }
+
+    @RequestMapping(value = "/actualizar/{id}", method = RequestMethod.GET)
+    public ModelAndView actualizarUsuario(@PathVariable Integer id) {
+        ModelAndView model = new ModelAndView();
+        Optional<Capacitacion> capacitacion = capacitacionService.getOne(id);
+        model.addObject("capacitacionForm", capacitacion);
+        model.setViewName("crearCapacitacion");
         return model;
     }
 
     @RequestMapping(value = "/guardar", method = RequestMethod.POST)
-    public ModelAndView guardarOEditarUsuario(@ModelAttribute("usuarioForm") Usuario usuario){
-        if(usuario.getIdUsuario() != null){
-            usuarioService.update(usuario);
+    public ModelAndView guardarOEditarUsuario(@ModelAttribute("capacitacionForm") Capacitacion capacitacion) {
+        if (capacitacion.getId() != null) {
+            capacitacionService.update(capacitacion);
         } else {
-            usuarioService.create(usuario);
+            capacitacionService.create(capacitacion);
         }
-        return  new ModelAndView("redirect:/usuario/lista");
+        return new ModelAndView("redirect:/listarCapacitaciones");
     }
 
 }

@@ -13,7 +13,7 @@ public class Capacitacion {
     @Id
     @Column(name = "id_capacitacion")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    Integer id;
     String duracion;
     @Column(name = "cantidad_asistentes")
     int cantidadDeAsistentes;
@@ -23,7 +23,8 @@ public class Capacitacion {
     }
 
     //Constructor completo
-    public Capacitacion(int rutCliente, String dia, String hora, String lugar, int id, String duracion, int cantidadDeAsistentes) {
+
+    public Capacitacion(int rutCliente, String dia, String hora, String lugar, Integer id, String duracion, int cantidadDeAsistentes) {
         this.rutCliente = rutCliente;
         this.dia = dia;
         this.hora = hora;
@@ -33,7 +34,9 @@ public class Capacitacion {
         this.cantidadDeAsistentes = cantidadDeAsistentes;
     }
 
+
     // Constructor sin ID
+
     public Capacitacion(int rutCliente, String dia, String hora, String lugar, String duracion, int cantidadDeAsistentes) {
         this.rutCliente = rutCliente;
         this.dia = dia;
@@ -43,13 +46,15 @@ public class Capacitacion {
         this.cantidadDeAsistentes = cantidadDeAsistentes;
     }
 
+
     //Getters and setters
 
-    public int getId() {
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

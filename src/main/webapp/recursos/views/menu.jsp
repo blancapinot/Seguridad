@@ -35,9 +35,6 @@
                     <a class="nav-link" href="listarCapacitaciones">Listar Capacitaciones</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="editar-capacitacion">Editar Capacitacion</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="registro">Listar Usuarios</a>
                 </li>
             </ul>

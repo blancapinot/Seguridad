@@ -52,6 +52,11 @@
                       <button title="Eliminar" type="submit" name="id" class="btn btn-primary" value="${capacitaciones.getId()}">Eliminar</button>
                    </form>
                 </td>
+                <td>
+                    <form action="./capacitacion/actualizar" method="get" modelAttribute="capacitacionForm">
+                        <button type="submit" name= "Id" value="${capacitaciones.getId()}" class="btn btn-primary">Editar</button>
+                    </form>
+                </td>
                 <%--<form action="EditarCapacitacion" method="post">
                     <button title="Eliminar" type="submit" name="id" class="btn btn-primary" value="${capacitaciones}">Editar</button>
                 </form>--%>

@@ -23,7 +23,7 @@ public class CapacitacionService {
         return capacitacionRepository.findAll();
     }
     public Optional<Capacitacion> getOne(Integer id){
-        return  capacitacionRepository.findById(id);
+          return capacitacionRepository.findById(id);
     }
     public void create(Capacitacion capacitacion){
         capacitacionRepository.save(capacitacion);
