@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="./">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/" >Inicio<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login">Ingresar</a>
@@ -26,13 +26,13 @@
                     <a class="nav-link" href="registro">Registrar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contacto">Contacto</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/contacto">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="crear-capacitacion">Crear Capacitación</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/capacitacion/guardar">Crear Capacitación</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="listarCapacitaciones">Listar Capacitaciones</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/capacitacion/lista">Listar Capacitaciones</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="registro">Listar Usuarios</a>

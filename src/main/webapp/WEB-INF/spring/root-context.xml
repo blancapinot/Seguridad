@@ -24,40 +24,47 @@
         <property name="password" value="undertaker179"/>
     </bean>
 
-    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="dataSource" ref="ds"/>
-        <property name="packagesToScan" value="cl.awakelab.models.entities"/>
+    <!-- Configuración de JPA -->
+    <bean id="entityManagerFactory"
+          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <!-- Referencia la datasource previamente configurado -->
+        <property name="dataSource" ref="ds" />
+
+        <!-- Especificar qué paquete contiene los modelos -->
+        <property name="packagesToScan" value="cl.awakelab.models" />
+
+        <!-- Vendor Adapter -->
         <property name="jpaVendorAdapter">
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
         </property>
 
+        <!-- Propiedades JPA -->
         <property name="jpaProperties">
             <props>
+                <!-- Dialecto > https://docs.jboss.org/hibernate/core/3.6/reference/en-US/html/session-configuration.html -->
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+
+                <!-- Mostrar consultas SQL (depuración) -->
                 <prop key="hibernate.show_sql">true</prop>
+
+                <!-- Usar comentarios SQL. Permite ver los valores utilizados en las consultas -->
                 <prop key="use_sql_comments">true</prop>
             </props>
         </property>
     </bean>
 
+    <!-- Administrador de transacciones -->
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
     </bean>
 
+    <!-- Habilitar la búsqueda de componentes en el proyecto -->
+    <context:component-scan base-package="cl.awakelab" />
 
-    <!--<bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">
-        <property name="dataSource" ref="ds"/>
-    </bean>-->
-    <!--<bean id="usuarioDAOImpl" class="cl.awakelab.models.DAO.UsuarioDaoImpl">
-        <property name="template" ref="jt"></property>
-    </bean>
+    <!-- Configuración del Administrador de Transacciones -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
 
-    <bean id="capacitacionDAOImpl" class="cl.awakelab.models.DAO.CapacitacionDaoImpl">
-        <property name="template" ref="jt"></property>
-    </bean>-->
-
-    <context:component-scan base-package="cl.awakelab"/>
-    <tx:annotation-driven transaction-manager="transactionManager"/>
-    <jpa:repositories base-package="cl.awakelab.models.repositories"/>
+    <!-- Configuración de los Repositorios -->
+    <jpa:repositories base-package="cl.awakelab.models.repositories" />
 
 </beans>

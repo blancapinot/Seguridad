@@ -31,7 +31,7 @@ public class CapacitacionService {
     public void update(Capacitacion capacitacion){
         capacitacionRepository.save(capacitacion);
     }
-    public void delete(int id){
+    public void delete(Integer id){
         capacitacionRepository.deleteById(id);
     }
 }

@@ -48,14 +48,12 @@
                     <c:out value="${capacitaciones.getDuracion()}"/>
                 </td>
                 <td>
-                   <form action="EliminarCapacitacion" method="post" modelAttribute="capacitacion">
-                      <button title="Eliminar" type="submit" name="id" class="btn btn-primary" value="${capacitaciones.getId()}">Eliminar</button>
-                   </form>
+                    <c:url value="/capacitacion/eliminar/${capacitaciones.id}" var="eliminarURL"/>
+                    <a class="btn btn-info" href="${eliminarURL}" role="button">Eliminar</a>
                 </td>
                 <td>
-                    <form action="./capacitacion/actualizar" method="get" modelAttribute="capacitacionForm">
-                        <button type="submit" name= "Id" value="${capacitaciones.getId()}" class="btn btn-primary">Editar</button>
-                    </form>
+                    <c:url value="/capacitacion/guardar/${capacitaciones.id}" var="actualizarURL"/>
+                    <a class="btn btn-info" href="${actualizarURL}" role="button">Editar</a>
                 </td>
                 <%--<form action="EditarCapacitacion" method="post">
                     <button title="Eliminar" type="submit" name="id" class="btn btn-primary" value="${capacitaciones}">Editar</button>
