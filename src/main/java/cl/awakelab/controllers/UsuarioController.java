@@ -1,7 +1,7 @@
 package cl.awakelab.controllers;
 
 import cl.awakelab.models.entities.Capacitacion;
-import cl.awakelab.models.services.CapacitacionService;
+import cl.awakelab.models.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,17 +12,20 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.Optional;
-@RequestMapping("/capacitacion")
+
+
+@RequestMapping("/usuario")
 @Controller
-public class CapacitacionController {
+public class UsuarioController {
 
     @Autowired
-    private CapacitacionService CapacitacionService;
+    private UsuarioService UsuarioService;
 
-    @RequestMapping(value = ("/lista"), method = RequestMethod.GET) //Muestra la lista de capacitaciones
-    public ModelAndView listarCapacitaciones(){
+
+    @RequestMapping(value = ("/listaUsuarios"), method = RequestMethod.GET) //Muestra la lista de capacitaciones
+    public ModelAndView listarUsuarios(){
         ModelAndView model = new ModelAndView();
-        List<Capacitacion> capacitaciones = CapacitacionService.getAll();
+        List<Usuarios> usuarios = usuarioService.getAll();
         model.addObject("capacitaciones", capacitaciones);
         model.setViewName("listarCapacitaciones");
         return model;
@@ -56,9 +59,9 @@ public class CapacitacionController {
     }
 
 
-    /**
+    *//**
      * Para obtener formulario
-     */
+     *//*
     @RequestMapping(value = "/guardar", method = RequestMethod.GET) //obtiene el formualrio para crear una nueva capacitacion
     public ModelAndView mostrarFormCapacitacion() {
         ModelAndView model = new ModelAndView();
@@ -68,9 +71,9 @@ public class CapacitacionController {
         return model;
     }
 
-    /**
+    *//**
      * Guardar formulario
-     */
+     *//*
     @RequestMapping(value = "/guardar", method = RequestMethod.POST)//guarda la nueva capacitacion
     public ModelAndView guardarOEditarFormCapacitacion(@ModelAttribute("capacitacionForm") Capacitacion capacitacion){
         if(capacitacion.getId() != null){
@@ -90,3 +93,4 @@ public class CapacitacionController {
 
 
 }
+}*/
