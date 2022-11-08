@@ -8,82 +8,97 @@ public class Usuario {
         @Column(name = "id_usuario")
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         protected Long idUsuario;
-        @Column(name = "nombre_completo")
-        protected String nombreCompleto;
+
+        protected String nombre;
+
+        protected String apellido;
 
         @Column(name = "fecha_nacimiento")
         protected String fechaNacimiento;
-        protected Integer run;
+        protected Integer rut;
         protected String tipo;
 
         public Usuario(){}
 
-        public Usuario(String nombreCompleto, String fechaNacimiento, Integer run, String tipo) {
-            this.nombreCompleto = nombreCompleto;
-            this.fechaNacimiento = fechaNacimiento;
-            this.run = run;
-            this.tipo = tipo;
-        }
+    public Usuario(String nombre, String apellido, String fechaNacimiento, Integer rut, String tipo) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.rut = rut;
+        this.tipo = tipo;
+    }
 
-        public Usuario(Long idUsuario, String nombreCompleto, String fechaNacimiento, Integer run, String tipo) {
-            this.idUsuario = idUsuario;
-            this.nombreCompleto = nombreCompleto;
-            this.fechaNacimiento = fechaNacimiento;
-            this.run = run;
-            this.tipo = tipo;
-        }
 
-        public Long getIdUsuario() {
-            return idUsuario;
-        }
+    public Usuario(Long idUsuario, String nombre, String apellido, String fechaNacimiento, Integer rut, String tipo) {
+        this.idUsuario = idUsuario;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.rut = rut;
+        this.tipo = tipo;
+    }
 
-        public void setIdUsuario(Long idUsuario) {
-            this.idUsuario = idUsuario;
-        }
+    public Long getIdUsuario() {
+        return idUsuario;
+    }
 
-        public String getNombreCompleto() {
-            return nombreCompleto;
-        }
+    public void setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
+    }
 
-        public void setNombreCompleto(String nombreCompleto) {
-            this.nombreCompleto = nombreCompleto;
-        }
+    public String getNombre() {
+        return nombre;
+    }
 
-        public String getFechaNacimiento() {
-            return fechaNacimiento;
-        }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-        public void setFechaNacimiento(String fechaNacimiento) {
-            this.fechaNacimiento = fechaNacimiento;
-        }
+    public String getApellido() {
+        return apellido;
+    }
 
-        public Integer getRun() {
-            return run;
-        }
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
 
-        public void setRun(Integer run) {
-            this.run = run;
-        }
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
 
-        public String getTipo() {
-            return tipo;
-        }
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
 
-        public void setTipo(String tipo) {
-            this.tipo = tipo;
-        }
+    public Integer getRut() {
+        return rut;
+    }
 
-        @Override
-        public String toString() {
-            return "Usuario{" +
-                    "nombreCompleto='" + nombreCompleto + '\'' +
-                    ", fechaNacimiento='" + fechaNacimiento + '\'' +
-                    ", run=" + run +
-                    ", tipo='" + tipo + '\'' +
-                    '}';
-        }
+    public void setRut(Integer rut) {
+        this.rut = rut;
+    }
 
-        /*@Override
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "idUsuario=" + idUsuario +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", fechaNacimiento='" + fechaNacimiento + '\'' +
+                ", rut=" + rut +
+                ", tipo='" + tipo + '\'' +
+                '}';
+    }
+
+  /*@Override
         public void analizarUsuario() {
             System.out.println("El nombre del usuario es " + this.nombreCompleto + ", y el run es: " + this.run);
         }*/
