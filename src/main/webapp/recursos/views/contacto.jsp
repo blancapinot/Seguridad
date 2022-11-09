@@ -13,48 +13,33 @@
 </head>
 <body>
 <%@include file="menu.jsp" %>
-<spring:url value="/usuario/guardar" var="agregarURL" htmlEscape="true"/>
-<form:form modelAttribute="usuarioForm" method="post" action="${agregarURL}" cssClass="form">
+<spring:url value="/contacto/guardar" var="agregarURL" htmlEscape="true"/>
+<form:form modelAttribute="contactoForm" method="post" action="${agregarURL}" cssClass="form">
     <form:hidden path="id"/>
 <div class="container">
     <form>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputName">Name</label>
-                <form:input type="text" name="name" cssClass="form-control" id="inputName"/>
+                <label for="inputNombre">Nombre</label>
+                <form:input type="text" cssClass="form-control" id="inputNombre"/>
             </div>
             <div class="form-group col-md-6">
-                <label for="lastName">lastName</label>
-                <form:input type="text" name="lastName" cssClass="form-control" id="lastName"/>
+                <label for="apellido">apellido</label>
+                <form:input type="text" cssClass="form-control" id="apellido"/>
             </div>
         </div>
         <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <form:input type="text" cssClass="form-control" id="inputAddress" placeholder="1234 Main St"/>
+            <label for="direccion">direccion</label>
+            <form:input type="text" cssClass="form-control" id="direccion" placeholder="1234 Main St"/>
         </div>
         <div class="form-group">
-            <label for="inputCuestion">Cuestion</label>
-            <form:input type="text" cssClass="form-control" id="inputCuestion" placeholder="Cuestion"/>
+            <label for="inputPregunta">pregunta</label>
+            <form:input type="text" cssClass="form-control" id="inputPregunta" placeholder="Cuestion"/>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <form:input type="text" cssClass="form-control" id="inputCity"/>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="inputState">State</label>
-                <select id="inputState" cssClass="form-control">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="form-check">
-                <form:input cssClass="form-check-input" type="checkbox" id="gridCheck"/>
-                <label class="form-check-label" for="gridCheck">
-                    Check me out
-                </label>
+                <label for="inputCiudad">ciudad</label>
+                <form:input type="text" cssClass="form-control" id="inputCiudad"/>
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Sign in</button>
