@@ -6,7 +6,7 @@
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <title>Prevención de riesgos</title>
+    <title>Registro Usuario</title>
 </head>
 <body>
 <div class="container">
@@ -31,6 +31,10 @@
         <div class="form-group">
             <label for="fechaNacimiento">Ingrese su fecha de nacimiento en formato "hh//mm/yy"</label>
             <form:input path="fechaNacimiento" cssClass="form-control" id="fechaNacimiento" placeholder="01/03/2001"/>
+        </div>
+        <div class="form-group">
+            <label for="tipo">Especifique su tipo de usuario</label>
+            <form:input path="tipo" cssClass="form-control" id="tipo" placeholder="Cliente, Administrativo o Profesional"/>
         </div>
 
         <button type="submit" class="btn btn-primary">Registrar</button>

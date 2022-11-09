@@ -19,32 +19,37 @@
             <th>Apellido</th>
             <th>Rut</th>
             <th>Fecha de Nacimiento</th>
+            <th>Tipo</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach items="${usuarioForm}" var="usuarios">
             <tr>
                 <td>
-                    <c:out value="${usuarios.getIdUsuario()}"/>
+                    <c:out value="${usuarioForm.getIdUsuario()}"/>
                 </td>
                 <td>
-                    <c:out value="${usuarios.getNombre()}"/>
+                    <c:out value="${usuarioForm.getNombre()}"/>
                 </td>
                 <td>
-                    <c:out value="${usuarios.getApellido()}"/>
+                    <c:out value="${usuarioForm.getApellido()}"/>
                 </td>
                 <td>
-                    <c:out value="${usuarios.getRut()}"/>
+                    <c:out value="${usuarioForm.getRut()}"/>
                 </td>
                 <td>
-                    <c:out value="${usuarios.getFechaNacimiento}"/>
+                    <c:out value="${usuarioForm.getTipo}"/>
                 </td>
+                <td>
+                    <c:out value="${usuarioForm.getFechaNacimiento}"/>
+                </td>
+
                 <td>
                     <spring:url value="/usuario/eliminar/${usuarios.idUsuario}" var="eliminarURL"/>
                     <a class="btn btn-primary" href="${eliminarURL}" role="button">Eliminar</a>
                 </td>
                 <td>
-                    <spring:url value="/capacitacion/actualizar/${usuarios.idUsuario}" var="actualizarURL"/>
+                    <spring:url value="/usuario/actualizar/${usuarios.idUsuario}" var="actualizarURL"/>
                     <a class="btn btn-primary" href="${actualizarURL}" role="button">Editar</a>
                 </td>
             </tr>

@@ -1,25 +1,28 @@
 package cl.awakelab.models.entities;
 
 import javax.persistence.*;
+
 @Entity
 @Table(name = "usuario")
 public class Usuario {
-        @Id
-        @Column(name = "id_usuario")
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        protected Long idUsuario;
+    @Id
+    @Column(name = "id_usuario")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected Long idUsuario;
 
-        protected String nombre;
+    protected String nombre;
 
-        protected String apellido;
+    protected String apellido;
 
-        @Column(name = "fecha_nacimiento")
-        protected String fechaNacimiento;
-        protected Integer rut;
-        protected String tipo;
+    @Column(name = "fecha_nacimiento")
+    protected String fechaNacimiento;
+    protected Integer rut;
+    protected String tipo;
 
-        public Usuario(){}
+    public Usuario() {
+    }
 
+    //Constructor sin ID
     public Usuario(String nombre, String apellido, String fechaNacimiento, Integer rut, String tipo) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -28,7 +31,7 @@ public class Usuario {
         this.tipo = tipo;
     }
 
-
+    //Constructor con ID
     public Usuario(Long idUsuario, String nombre, String apellido, String fechaNacimiento, Integer rut, String tipo) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
@@ -102,6 +105,6 @@ public class Usuario {
         public void analizarUsuario() {
             System.out.println("El nombre del usuario es " + this.nombreCompleto + ", y el run es: " + this.run);
         }*/
-    }
+}
 
 

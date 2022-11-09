@@ -15,8 +15,9 @@ import java.util.List;
 import java.util.Optional;
 
 
-@RequestMapping("/usuario")
+
 @Controller
+@RequestMapping("/usuario")
 public class UsuarioController {
 
     @Autowired
@@ -41,10 +42,10 @@ public class UsuarioController {
         return model;
     }
 
-    @RequestMapping(value = "/actualizar/{id}", method = RequestMethod.GET)
-    public ModelAndView actualizarUsuario(@PathVariable Integer id) {
+    @RequestMapping(value = "/actualizar/{idUsuario}", method = RequestMethod.GET)
+    public ModelAndView actualizarUsuario(@PathVariable Integer idUsuario) {
         ModelAndView model = new ModelAndView();
-        Optional<Usuario> usuario = usuarioService.getOne(id);
+        Optional<Usuario> usuario = usuarioService.getOne(idUsuario);
         model.addObject("capacitacionForm", usuario);
         model.setViewName("crearUsuario");
         return model;
@@ -60,8 +61,8 @@ public class UsuarioController {
         return new ModelAndView("redirect:/usuario/listar");
     }
 
-    @RequestMapping(value = "/eliminar/{id}", method = RequestMethod.GET)
-    public ModelAndView eliminarUsuario(@PathVariable("id") Integer id) {
+    @RequestMapping(value = "/eliminar/{idUsuario}", method = RequestMethod.GET)
+    public ModelAndView eliminarUsuario(@PathVariable("idUsuario") Integer id) {
         usuarioService.delete(id);
         return new ModelAndView("redirect:/usuario/listar");
     }
