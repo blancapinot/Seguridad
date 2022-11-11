@@ -23,7 +23,7 @@
                     <a class="nav-link" href="login">Ingresar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="registro">Registrar</a>
+                    <a class="nav-link" href=${pageContext.request.contextPath}/usuario/crear>Registrar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/contacto">Contacto</a>
@@ -35,7 +35,7 @@
                     <a class="nav-link" href="${pageContext.request.contextPath}/capacitacion/lista">Listar Capacitaciones</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="registro">Listar Usuarios</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/usuario/listar">Listar Usuarios</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
