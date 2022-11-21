@@ -1,6 +1,5 @@
 package cl.awakelab.controllers;
 
-import cl.awakelab.models.entities.Capacitacion;
 import cl.awakelab.models.entities.Usuario;
 import cl.awakelab.models.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +44,7 @@ public class UsuarioController {
     @RequestMapping(value = "/actualizar/{idUsuario}", method = RequestMethod.GET)
     public ModelAndView actualizarUsuario(@PathVariable Integer idUsuario) {
         ModelAndView model = new ModelAndView();
-        Optional<Usuario> usuario = usuarioService.getOne(idUsuario);
+        Optional<Usuario> usuario = usuarioService.getOne(Long.valueOf(idUsuario));
         model.addObject("capacitacionForm", usuario);
         model.setViewName("crearUsuario");
         return model;
@@ -63,7 +62,7 @@ public class UsuarioController {
 
     @RequestMapping(value = "/eliminar/{idUsuario}", method = RequestMethod.GET)
     public ModelAndView eliminarUsuario(@PathVariable("idUsuario") Integer id) {
-        usuarioService.delete(id);
+        usuarioService.delete((long) Math.toIntExact(id));
         return new ModelAndView("redirect:/usuario/listar");
     }
 

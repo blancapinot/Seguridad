@@ -11,6 +11,7 @@
 <body>
 <div class="container">
     <%@include file="menu.jsp" %>
+
     <table class="table">
         <thead>
         <tr>
@@ -23,33 +24,33 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${usuarioForm}" var="usuarios">
+        <c:forEach items="${usuarioForm}" var="usuario">
             <tr>
                 <td>
-                    <c:out value="${usuarioForm.getIdUsuario()}"/>
+                    <c:out value="${usuario.getIdUsuario()}"/>
                 </td>
                 <td>
-                    <c:out value="${usuarioForm.getNombre()}"/>
+                    <c:out value="${usuario.getNombre()}"/>
                 </td>
                 <td>
-                    <c:out value="${usuarioForm.getApellido()}"/>
+                    <c:out value="${usuario.getApellido()}"/>
                 </td>
                 <td>
-                    <c:out value="${usuarioForm.getRut()}"/>
+                    <c:out value="${usuario.getRut()}"/>
                 </td>
                 <td>
-                    <c:out value="${usuarioForm.getTipo}"/>
+                    <c:out value="${usuario.getTipo()}"/>
                 </td>
                 <td>
-                    <c:out value="${usuarioForm.getFechaNacimiento}"/>
+                    <c:out value="${usuario.getFechaNacimiento()}"/>
                 </td>
 
                 <td>
-                    <spring:url value="/usuario/eliminar/${usuarios.idUsuario}" var="eliminarURL"/>
+                    <spring:url value="/usuario/eliminar/${usuario.idUsuario}" var="eliminarURL"/>
                     <a class="btn btn-primary" href="${eliminarURL}" role="button">Eliminar</a>
                 </td>
                 <td>
-                    <spring:url value="/usuario/actualizar/${usuarios.idUsuario}" var="actualizarURL"/>
+                    <spring:url value="/usuario/actualizar/${usuario.idUsuario}" var="actualizarURL"/>
                     <a class="btn btn-primary" href="${actualizarURL}" role="button">Editar</a>
                 </td>
             </tr>

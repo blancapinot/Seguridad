@@ -1,6 +1,5 @@
 package cl.awakelab.models.services;
 
-import cl.awakelab.models.entities.Capacitacion;
 import cl.awakelab.models.entities.Usuario;
 import cl.awakelab.models.repositories.IUsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +22,8 @@ public class UsuarioService{
     public List<Usuario> getAll(){
         return usuarioRepository.findAll();
     }
-    public Optional<Usuario> getOne(Integer idUsuario){
-        return usuarioRepository.findById(idUsuario);
+    public Optional<Usuario> getOne(Long idUsuario){
+        return usuarioRepository.findById(Math.toIntExact(idUsuario));
     }
     public void create(Usuario usuario){
         usuarioRepository.save(usuario);
@@ -32,7 +31,7 @@ public class UsuarioService{
     public void update(Usuario usuario){
         usuarioRepository.save(usuario);
     }
-    public void delete(Integer idUsuario){
-        usuarioRepository.deleteById(idUsuario);
+    public void delete(Long idUsuario){
+        usuarioRepository.deleteById(Math.toIntExact(idUsuario));
     }
 }
