@@ -14,7 +14,7 @@
 
     <%--    Formulario--%>
     <spring:url value="/usuario/guardar" var="guardarURL" htmlEscape="true"/>
-    <form:form modelAttribute="usuarioForm" method="post" action="${guardarURL}" cssClass="form">
+    <form:form modelAttribute="usuario" method="post" action="${guardarURL}" cssClass="form">
         <form:hidden path="idUsuario"/>
         <div class="form-group">
             <label for="nombre">Ingrese su Nombre</label>

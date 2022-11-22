@@ -8,7 +8,7 @@ public class Usuario {
     @Id
     @Column(name = "id_usuario")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Long idUsuario;
+    protected Integer idUsuario;
 
     protected String nombre;
 
@@ -32,7 +32,9 @@ public class Usuario {
     }
 
     //Constructor con ID
-    public Usuario(Long idUsuario, String nombre, String apellido, String fechaNacimiento, Integer rut, String tipo) {
+
+
+    public Usuario(Integer idUsuario, String nombre, String apellido, String fechaNacimiento, Integer rut, String tipo) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -41,11 +43,11 @@ public class Usuario {
         this.tipo = tipo;
     }
 
-    public Long getIdUsuario() {
+    public Integer getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
+    public void setIdUsuario(Integer idUsuario) {
         this.idUsuario = idUsuario;
     }
 

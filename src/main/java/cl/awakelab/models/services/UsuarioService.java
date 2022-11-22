@@ -22,8 +22,8 @@ public class UsuarioService{
     public List<Usuario> getAll(){
         return usuarioRepository.findAll();
     }
-    public Optional<Usuario> getOne(Long idUsuario){
-        return usuarioRepository.findById(Math.toIntExact(idUsuario));
+    public Optional<Usuario> getOne(Integer idUsuario){
+        return usuarioRepository.findById(idUsuario);
     }
     public void create(Usuario usuario){
         usuarioRepository.save(usuario);
@@ -31,7 +31,7 @@ public class UsuarioService{
     public void update(Usuario usuario){
         usuarioRepository.save(usuario);
     }
-    public void delete(Long idUsuario){
-        usuarioRepository.deleteById(Math.toIntExact(idUsuario));
+    public void delete(Integer idUsuario){
+        usuarioRepository.deleteById(idUsuario);
     }
 }

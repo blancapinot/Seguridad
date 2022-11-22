@@ -26,7 +26,7 @@ public class UsuarioController {
     public ModelAndView mostrarUsuarios() {
         ModelAndView model = new ModelAndView();
         List<Usuario> usuarios = usuarioService.getAll();
-        model.addObject("usuarioForm", usuarios);
+        model.addObject("usuario", usuarios);
         model.setViewName("listarUsuarios");
         return model;
     }
@@ -36,7 +36,7 @@ public class UsuarioController {
     public ModelAndView crearUsuario() {
         ModelAndView model = new ModelAndView();
         Usuario usuario = new Usuario();
-        model.addObject("usuarioForm", usuario);
+        model.addObject("usuario", usuario);
         model.setViewName("crearUsuario");
         return model;
     }
@@ -44,8 +44,8 @@ public class UsuarioController {
     @RequestMapping(value = "/actualizar/{idUsuario}", method = RequestMethod.GET)
     public ModelAndView actualizarUsuario(@PathVariable Integer idUsuario) {
         ModelAndView model = new ModelAndView();
-        Optional<Usuario> usuario = usuarioService.getOne(Long.valueOf(idUsuario));
-        model.addObject("capacitacionForm", usuario);
+        Optional<Usuario> usuario = usuarioService.getOne(idUsuario);
+        model.addObject("usuario", usuario);
         model.setViewName("crearUsuario");
         return model;
     }
@@ -60,9 +60,9 @@ public class UsuarioController {
         return new ModelAndView("redirect:/usuario/listar");
     }
 
-    @RequestMapping(value = "/eliminar/{idUsuario}", method = RequestMethod.GET)
-    public ModelAndView eliminarUsuario(@PathVariable("idUsuario") Integer id) {
-        usuarioService.delete((long) Math.toIntExact(id));
+    @RequestMapping(value = "/eliminar/{id}", method = RequestMethod.GET)
+    public ModelAndView eliminarUsuario(@PathVariable("id") Integer id) {
+        usuarioService.delete(id);
         return new ModelAndView("redirect:/usuario/listar");
     }
 

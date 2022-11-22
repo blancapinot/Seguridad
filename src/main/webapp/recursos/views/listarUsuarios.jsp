@@ -24,7 +24,7 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${usuarioForm}" var="usuario">
+        <c:forEach items="${usuario}" var="usuario">
             <tr>
                 <td>
                     <c:out value="${usuario.getIdUsuario()}"/>
