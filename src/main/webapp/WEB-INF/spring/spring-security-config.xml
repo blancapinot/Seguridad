@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/security
+        https://www.springframework.org/schema/security/spring-security.xsd">
+
+    <security:http auto-config="true">
+        <security:intercept-url pattern="/" access="permitAll()"/>
+        <security:intercept-url pattern="/capacitacion/lista" access="hasAnyAuthority('ADMIN')"/>
+        <security:intercept-url pattern="/capacitacion/guardar" access="hasAnyAuthority('ADMIN','USUARIO')"/>
+        <security:form-login login-page="/login" authentication-failure-forward-url="/error"
+                             username-parameter="username" password-parameter="password"/>
+        <security:csrf disabled="true"/>
+        <security:logout logout-success-url="/"/>
+    </security:http>
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:password-encoder hash="bcrypt"/>
+            <security:jdbc-user-service data-source-ref="ds"
+                                        users-by-username-query="select username as username, password,1 as enabled from rol where username = ?"
+                                        authorities-by-username-query="select username as username, rol as authority from rol where username = ?"/>
+        </security:authentication-provider>
+    </security:authentication-manager>
+</beans>
