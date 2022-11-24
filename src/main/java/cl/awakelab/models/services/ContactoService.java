@@ -14,24 +14,21 @@ public class ContactoService {
     @Autowired
     private IContactoRepository contactoRepository;
 
-    public ContactoService(IContactoRepository contactoRepository) {
-        this.contactoRepository = contactoRepository;
-    }
-
     public List<Contacto> getAll(){
         return contactoRepository.findAll();
-    }
-    public Optional<Contacto> getOne(Integer id){
-        return contactoRepository.findById(id);
     }
     public void create(Contacto contacto){
         contactoRepository.save(contacto);
     }
+    public Optional<Contacto> getOne(Integer id){
+        return contactoRepository.findById(id);
+    }
+
     public void update(Contacto contacto){
         contactoRepository.save(contacto);
     }
-    public void delete(Integer id){
-        contactoRepository.deleteById(id);
+    public void delete(Integer idContacto){
+        contactoRepository.deleteById(idContacto);
     }
 }
 

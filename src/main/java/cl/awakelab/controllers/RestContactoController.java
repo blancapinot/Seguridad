@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class RestUsuarioController {
+public class RestContactoController {
     @Autowired
     private ContactoService contactoService;
 
