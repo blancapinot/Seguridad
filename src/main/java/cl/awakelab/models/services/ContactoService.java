@@ -20,8 +20,8 @@ public class ContactoService {
     public void create(Contacto contacto){
         contactoRepository.save(contacto);
     }
-    public Optional<Contacto> getOne(Integer id){
-        return contactoRepository.findById(id);
+    public Optional<Contacto> getOne(Integer idContacto){
+        return contactoRepository.findById(idContacto);
     }
 
     public void update(Contacto contacto){

@@ -32,7 +32,7 @@
                     <a class="nav-link" href="${pageContext.request.contextPath}/usuario/crear">Registrar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/contacto/guardar">Contacto</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/contacto/agregar">Contacto</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/capacitacion/guardar">Crear
