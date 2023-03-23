@@ -19,8 +19,7 @@
         <div class="card h-100">
             <img src=res/images/img8.jpg class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Asesoría</p>
+                <h5 class="card-title">Asesoría</h5>
             </div>
         </div>
     </div>
@@ -28,8 +27,7 @@
         <div class="card h-100">
             <img src="res/images/img8.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Capacitación</p>
+                <h5 class="card-title">Capacitación</h5>
             </div>
         </div>
     </div>
@@ -37,8 +35,7 @@
         <div class="card h-100">
             <img src="res/images/img6.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Seguridad</p>
+                <h5 class="card-title">Seguridad</h5>
             </div>
         </div>
     </div>
@@ -46,8 +43,7 @@
         <div class="card h-100">
             <img src="res/images/img5.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Implementos</p>
+                <h5 class="card-title">Implementos</h5>
             </div>
         </div>
     </div>
