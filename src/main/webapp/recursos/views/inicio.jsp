@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <title>Prevención de riesgos</title>
 </head>
-
+<body>
+<div class="menu">
+    <%@include file="menu.jsp"%>
+</div>
 <div class="container">
-<%@include file="menu.jsp"%>
 <div class="row row-cols-1 row-cols-md-2">
     <div class="col mb-4">
         <div class="card h-100">
